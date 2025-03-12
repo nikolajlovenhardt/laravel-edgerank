@@ -36,7 +36,9 @@ $posts = EdgeRankBuilder::make()
 
 ### Limits and offsets
 
-Simple
+#### Simple pagination
+
+Paginate with a simple limit and offset
 
 ```php
 use LaravelEdgeRank\Builders\EdgeRankBuilder;
@@ -47,7 +49,9 @@ $posts = EdgeRankBuilder::make()
     ->get();
 ```
 
-Cursor
+#### Cursor
+
+Do you need to paginate using ids? No worries, we got your back
 
 ```php
 use LaravelEdgeRank\Builders\EdgeRankBuilder;
@@ -58,6 +62,8 @@ $posts = EdgeRankBuilder::make()
 ```
 
 ### Custom query
+
+Use the `$builder->query()` method to access the query builder before fetching the results. This allows you to add custom query code still utilizing the EdgeRank-sort.
 
 ```php
 use LaravelEdgeRank\Builders\EdgeRankBuilder;
@@ -78,6 +84,8 @@ $posts = EdgeRankBuilder::make(Item::class)
 ```
 
 ### Custom model / Override config
+
+Use a custom model without configuration using the `EdgeRankBuilder::make()` method, and add custom config using `weights()`and `options()`-methods.
 
 ```php
 use LaravelEdgeRank\Builders\EdgeRankBuilder;
