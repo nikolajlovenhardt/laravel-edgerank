@@ -57,6 +57,26 @@ $posts = EdgeRankBuilder::make()
     ->get();
 ```
 
+### Custom query
+
+```php
+use LaravelEdgeRank\Builders\EdgeRankBuilder;
+use App\Models\Feed\Item;
+
+$friendIds = [1, 2, 3, 4];
+
+$posts = EdgeRankBuilder::make(Item::class)
+    ->query()
+    ->where(function ($query) use ($friendIds) {
+        $query->whereIn('user_id', $friendIds)
+        
+        $query->orWhereHas('user', function () {
+            $query->where('is_public', '=', true)
+        });
+    })
+    ->get();
+```
+
 ### Custom model / Override config
 
 ```php
