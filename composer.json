@@ -1,0 +1,41 @@
+{
+  "name": "nikolajlovenhardt/laravel-edgerank",
+  "type": "library",
+  "description": "Facebook Edgerank Algorithm for Laravel",
+  "keywords": [
+    "laravel",
+    "edgerank"
+  ],
+  "homepage": "https://github.com/nikolajlovenhardt/laravel-edgerank",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Nikolaj Løvenhardt",
+      "email": "nikolaj.lovenhardt@gmail.com",
+      "homepage": "http://github.com/nikolajlovenhardt"
+    }
+  ],
+  "require": {
+    "php": ">=8.2",
+    "laravel/framework": "^11.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "LaravelEdgeRank\\": "src/LaravelEdgeRank"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "LaravelEdgeRank\\LaravelEdgeRankProvider"
+      ]
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "LaravelEdgeRankTests\\": "tests/"
+    }
+  }
+}
