@@ -31,7 +31,7 @@ php artisan vendor:publish --tag="edgerank-migrations"
 use LaravelEdgeRank\Builders\EdgeRankBuilder;
 
 $posts = EdgeRankBuilder::make()
-    ->get()
+    ->get();
 ```
 
 ### Limits and offsets
@@ -44,7 +44,7 @@ use LaravelEdgeRank\Builders\EdgeRankBuilder;
 $posts = EdgeRankBuilder::make()
     ->limit(50)
     ->offset(100)
-    ->get()
+    ->get();
 ```
 
 Cursor
@@ -54,7 +54,7 @@ use LaravelEdgeRank\Builders\EdgeRankBuilder;
 
 $posts = EdgeRankBuilder::make()
     ->after(100, 'id') // Get older posts than #100
-    ->get()
+    ->get();
 ```
 
 ### Custom model / Override config
@@ -69,7 +69,7 @@ $posts = EdgeRankBuilder::make(Item::class)
         'hates' => 2,
         'customRelation' => 1.5, // Item->customRelation(): HasMany
     ])
-    ->get()
+    ->get();
 ```
 
 ## Contributing
